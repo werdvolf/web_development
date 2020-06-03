@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.materialdesignicons.com/3.8.95/css/materialdesignicons.min.css" rel="stylesheet">
+  <title>Advertising Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="body">
+  <header class="header">
+    <div class="container">
+    <div class="logo">
+        <a href="{{ url_for('index') }}"><img src="../static/resources/logo.png" alt="" class="logo-img"/></a>
+    </div>
+        <nav>
+          <ul>
+            <a  href="{{ url_for('index') }}" class="nav-link">Home</a>
+            <a  href="{{ url_for('order') }}" class="nav-link">Make Order</a>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            {% endif %}
+          </ul>
+        </nav>
+    </div>
+</header>
+    <section class="form">
+        <div class="container">
+
+        <form action="" method="post">
+            <h2 class="login-form-h2">Register</h2>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}<br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32) }}<br>
+                {% for error in form.email.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password2.label }}<br>
+                {{ form.password2(size=32) }}<br>
+                {% for error in form.password2.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    <div>
+        
+    </div>
+    </div>
+    </section>
+
+
+    <footer class="cost-footer">
+        <div class="container">
+        <div class="link-container">
+            <a href="">
+            <div class="pre-footer-link">
+                <i class="mdi mdi-facebook"></i>
+            </div>
+            </a>
+            <a href="">
+            <div class="pre-footer-link">
+                <i class="mdi mdi-instagram"></i>
+            </div>
+            </a>
+            <a href="">
+            <div class="pre-footer-link">
+                <i class="mdi mdi-twitter"></i>
+            </div>
+            </a>
+        </div>
+        <p class="footnote">
+            Дойков Вадим<span>&copy;2020</span>
+        </p>
+        </div>
+    </footer>   
+</body>
+</html>

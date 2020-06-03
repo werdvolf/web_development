@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.materialdesignicons.com/3.8.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    <title>Advertising Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  </head>
+  <body class="body">
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="resources/logo.png" alt="" class="logo-img"/></a>
+        </div>
+        <nav>
+          <ul>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="order.html" class="nav-link">Make Order</a>
+            <a href="login.html" class="nav-link">Login</a>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="form">
+      <div class="container">
+        <form action="" method="POST">
+          <h2 class="order">Зробіть ваше замовлення</h2>
+          <div class="input">
+            <input type="text" name="company-name" required placeholder="Ім`я компанії" class="input-form" />
+            <input type="text" name="min-budjet" required placeholder="Мінімальний бюджет" class="input-form" />
+            <input type="text" name="max-budjet" required placeholder="Максимальний бюджет" class="input-form" />
+          </div>
+          <div>
+            <label>
+              <span>Типи реклами:</span>
+              <input type="checkbox" name="extra" value="media" />
+              Media
+              <input type="checkbox" name="extra" value="outdoor" />
+              Outdoor
+              <input type="checkbox" name="extra" value="productplacment" />
+              Productplacment
+              <input type="checkbox" name="extra" value="tv" />
+              TV
+              <input type="checkbox" name="extra" value="radio" />
+              Radio
+            </label>
+          </div>
+          <div class="input">
+            <textarea name="description" id="" cols="30" rows="10" placeholder="Опис проекту"></textarea>
+          </div>
+          <div class="button-div">
+            <button class="submit">Відправити заявку</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="cost-footer">
+      <div class="container">
+        <div class="link-container">
+          <a href="">
+            <div class="pre-footer-link">
+              <i class="mdi mdi-facebook"></i>
+            </div>
+          </a>
+          <a href="">
+            <div class="pre-footer-link">
+              <i class="mdi mdi-instagram"></i>
+            </div>
+          </a>
+          <a href="">
+            <div class="pre-footer-link">
+              <i class="mdi mdi-twitter"></i>
+            </div>
+          </a>
+        </div>
+        <p class="footnote">Дойков Вадим<span>&copy;2020</span></p>
+      </div>
+    </footer>
+  </body>
+</html>

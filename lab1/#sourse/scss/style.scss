@@ -1,0 +1,259 @@
+@import "nullstyle";
+@import "variables";
+@import "extensions";
+
+body {
+  background-color: #659dbd;
+}
+
+.mdi {
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 10px auto;
+  padding: 100px;
+}
+
+.header {
+  width: 100%;
+  height: 75px;
+  background-color: $header-color;
+  position: fixed;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10000;
+  nav {
+    display: flex;
+    align-items: center;
+    margin-right: 20%;
+
+    ul {
+      a {
+        font-family: $default-font;
+        font-weight: 500;
+      }
+    }
+  }
+  .logo {
+    height: 75px;
+    width: 300px;
+
+    .logo-img {
+      width: 100%;
+      height: 75px;
+    }
+  }
+
+  .nav-link {
+    margin: 0 25px;
+    font-family: $default-font;
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+}
+
+.section-1 {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .container {
+    height: inherit;
+    background-color: $section-bg-color;
+    padding: 15px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+
+  h2 {
+    @extend %h2-style;
+  }
+  p {
+    @extend %p-style;
+    color: $section-p-color-2;
+  }
+
+  .img-container {
+    width: 1200px;
+    height: 230px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+
+  .image-style {
+    width: 30%;
+    background-color: rgb(21, 22, 43);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.404);
+    margin: 0 auto;
+    border-radius: 20px;
+
+    img {
+      width: 100%;
+      display: inline;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .img-text p {
+      text-align: center;
+    }
+  }
+}
+
+.section-2 {
+  margin-top: 50px;
+  .container {
+    height: inherit;
+    background-color: $section-bg-color;
+    padding: 15px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+
+  h2 {
+    @extend %h2-style;
+    margin: 20px 0 30px;
+  }
+  p {
+    @extend %p-style;
+
+    padding: 40px;
+  }
+}
+
+.section-3 {
+  margin: 50px 0 80px;
+  .container {
+    height: inherit;
+    background-color: $section-bg-color;
+    padding: 15px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+
+  h2 {
+    @extend %h2-style;
+    margin: 20px 0 30px;
+  }
+  p {
+    @extend %p-style;
+
+    padding: 40px;
+  }
+  .end-text {
+    p {
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Order */
+
+.form {
+  padding: 75px 0 0;
+  position: relative;
+
+  .container {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: inherit;
+      height: inherit;
+
+      background-color: #fff;
+      padding: 30px;
+      margin: 25px 0 0;
+      border-radius: 20px;
+
+      h2 {
+        width: inherit;
+        margin: 0 auto;
+
+        @extend %h2-style;
+        font-size: 35px;
+        padding: 20px 0 35px;
+      }
+      p {
+        @extend %p-style;
+      }
+
+      .input {
+        display: flex;
+        flex-direction: column;
+        width: inherit;
+        margin: 15px auto;
+
+        .input-form {
+          width: 250px;
+          padding: 10px;
+          margin: 5px;
+          border-radius: 20px;
+          outline: none;
+        }
+
+        textarea {
+          padding: 10px;
+          border-radius: 20px;
+          outline: none;
+        }
+      }
+
+      .login-form-h2 {
+        margin: 0 0 10px;
+        padding: 0;
+      }
+      .login-form {
+        margin: 10px 0;
+      }
+      
+      .button-div {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row-reverse;
+
+        a {
+          text-decoration: none;
+        }
+
+        .submit {
+          font-family: $default-font;
+          background: transparent;
+          color: $header-color;
+          font-size: 12pt;
+          margin: 5px 5px 0;
+          outline: 0;
+          padding: 10px 30px;
+          border: 2px solid $header-color;
+          cursor: pointer;
+          transition: all 0.5s;
+          border-radius: 20px;
+
+          &:hover {
+            background-color: $header-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+

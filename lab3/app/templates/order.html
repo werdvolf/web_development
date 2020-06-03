@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.materialdesignicons.com/3.8.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    <title>Advertising Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body class="body">
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="{{ url_for('index') }}"><img src="../static/resources/logo.png" alt="" class="logo-img"/></a>
+        </div>
+        <nav>
+          <ul>
+            <a  href="{{ url_for('index') }}" class="nav-link">Home</a>
+            <a  href="{{ url_for('order') }}" class="nav-link">Make Order</a>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="form">
+      <div class="container">
+        <form action="" id="order-form">
+          <h2 class="order">Зробіть ваше замовлення</h2>
+          <div class="input">
+            <input type="text" name="company-name" required placeholder="Ім`я компанії" class="input-form" id="company_name" />
+            <input type="text" name="min-budjet" required placeholder="Мінімальний бюджет" class="input-form" id="min_budget"/>
+            <input type="text" name="max-budjet" required placeholder="Максимальний бюджет" class="input-form" id="max_budget"/>
+          </div>
+          <div>
+            <label>
+              <span>Типи реклами:</span>
+              <input type="checkbox" name="extra" value="media" id="media_input"/>
+              Media
+              <input type="checkbox" name="extra" value="outdoor" id="outdoor_input"/>
+              Outdoor
+              <input type="checkbox" name="extra" value="product placement" id="product_placement_input"/>
+              Product placment
+              <input type="checkbox" name="extra" value="tv" id="tv_input"/>
+              TV
+              <input type="checkbox" name="extra" value="radio" id="radio_input"/>
+              Radio
+            </label>
+          </div>
+          <div class="input">
+            <textarea name="description" id="description_input" cols="30" rows="10" placeholder="Опис проекту"></textarea>
+          </div>
+          <div class="button-div">
+            <button class="submit" id="submit_button" >Відправити заявку</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <footer class="cost-footer">
+      <div class="container">
+        <div class="link-container">
+          <a href="#">
+            <div class="pre-footer-link">
+              <i class="mdi mdi-facebook"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div class="pre-footer-link">
+              <i class="mdi mdi-instagram"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div class="pre-footer-link">
+              <i class="mdi mdi-twitter"></i>
+            </div>
+          </a>
+        </div>
+        <p class="footnote">Дойков Вадим<span>&copy;2020</span></p>
+      </div>
+    </footer>
+    <script src="../static/js/helpers.js"></script>
+    <script src="../static/js/loader.js"></script>
+    <script src="../static/js/post_order.js"></script>
+    <script>
+        window.onload = function() {
+        document.getElementById("order-form").onsubmit = function() {
+            make_order();
+            return false;
+        };
+    };
+</script>
+  </body>
+</html>
